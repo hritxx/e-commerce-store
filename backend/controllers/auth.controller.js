@@ -110,7 +110,7 @@ export const logout = async (req, res) => {
     res.clearCookie("refreshToken");
     res.json({ Message: "Logged out successfully" });
   } catch (error) {
-    console.log("Error in logout controler", error.message);
+    console.log("Error in logout controller", error.message);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
@@ -144,9 +144,9 @@ export const refreshToken = async (req, res) => {
       maxAge: 15 * 60 * 1000,
     });
 
-    res.json({ message: "Token refreshed successfuly" });
+    res.json({ message: "Token refreshed successfully" });
   } catch (error) {
-    console.log("Error in refresh token controler", error.message);
+    console.log("Error in refresh token controller", error.message);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
@@ -155,7 +155,7 @@ export const getProfile = async (req, res) => {
   try {
     res.json(req.user);
   } catch (error) {
-    console.log("Error in getProfile controler", error.message);
+    console.log("Error in getProfile controller", error.message);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
